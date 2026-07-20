@@ -1,0 +1,26 @@
+generated: '2026-07-18'
+method: searched
+source: https://api.catonetworks.com/documentation/
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+  oauth2_flows: []
+schemes:
+- name: apiKey
+  type: apiKey
+  in: header
+  parameter_name: x-api-key
+  description: Cato API key (token) generated in the Cato Management Application (CMA)
+    under API management. Every GraphQL request must include the key in the x-api-key
+    header along with an accountID argument identifying the target account.
+  sources:
+  - https://api.catonetworks.com/documentation/
+docs: https://api.catonetworks.com/documentation/
+account_scope: Requests are bound to a Cato account via an accountID variable; the
+  API key is generated per account/admin and can be scoped by admin role and API
+  permissions in the CMA.
+notes: No OAuth 2.0 / OpenID Connect surface. Authentication is a single API key
+  header (x-api-key); there is no scopes artifact because the API does not expose
+  OAuth scopes (permissions are governed by CMA admin roles).
