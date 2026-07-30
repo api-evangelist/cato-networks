@@ -1,20 +1,63 @@
 aid: cato-networks
 name: Cato Networks
-description: 'Cato Networks is a company surfaced as a portfolio company of lightspeed-venture-partners
-  and added to the API Evangelist network as a stub for enrichment. Sector: cybersecurity. This profile
-  is a lead awaiting the enrichment pipeline.'
+description: 'Cato Networks is the SASE (Secure Access Service Edge) pioneer, delivering
+  networking and security as a single global cloud platform that converges SD-WAN, a
+  global private backbone, and a full cloud security stack — FWaaS, Secure Web Gateway,
+  CASB, DLP, ZTNA/SDP, IPS, anti-malware, Remote Browser Isolation, and XDR. Cato
+  exposes a public GraphQL API (api/v1/graphql2) for programmatic management, analytics,
+  and event streaming of the Cato Management Application (CMA), authenticated with an
+  API key sent in the x-api-key header. The official developer surface includes a Python
+  CLI (catocli), a Go SDK (cato-go-sdk), a Terraform provider (catonetworks/cato), a
+  local Model Context Protocol server (cato-mcp-server), and a web-based API explorer.'
 url: https://raw.githubusercontent.com/api-evangelist/cato-networks/refs/heads/main/apis.yml
 x-type: company
 x-source: lightspeed-venture-partners-portfolio
-x-tier: stub
+x-tier: enriched
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://avatars.githubusercontent.com/u/182921385
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
 - Cybersecurity
-apis: []
+- SASE
+- SSE
+- Networking
+- Security
+- SD-WAN
+- Zero Trust
+- GraphQL
+- API
+apis:
+- name: Cato GraphQL API
+  description: 'Public GraphQL API for the Cato Management Application (CMA): site and
+    account provisioning, policy configuration, network/security analytics, entity
+    lookup, and event streaming. Single GraphQL endpoint, authenticated with an API
+    key in the x-api-key header.'
+  humanURL: https://api.catonetworks.com/documentation/
+  baseURL: https://api.catonetworks.com/api/v1/graphql2
+  tags:
+  - GraphQL
+  - SASE
+  - Security
+  properties:
+  - type: APIReference
+    url: https://api.catonetworks.com/documentation/
+  - type: Authentication
+    url: authentication/cato-networks-authentication.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -23,3 +66,60 @@ maintainers:
 common:
 - type: Website
   url: https://www.catonetworks.com
+- type: DeveloperPortal
+  url: https://api.catonetworks.com/documentation/
+- type: Documentation
+  url: https://api.catonetworks.com/documentation/
+- type: APIReference
+  url: https://api.catonetworks.com/documentation/
+- type: GettingStarted
+  url: https://api.catonetworks.com/documentation/
+- type: GitHubOrganization
+  url: https://github.com/catonetworks
+- type: Blog
+  url: https://www.catonetworks.com/blog/
+- type: Support
+  url: https://www.catonetworks.com/support/
+- type: StatusPage
+  url: https://status.catonetworks.com/
+- type: TermsOfService
+  url: https://www.catonetworks.com/legal/terms-of-use/
+- type: PrivacyPolicy
+  url: https://www.catonetworks.com/privacy-policy/
+- type: Authentication
+  url: authentication/cato-networks-authentication.yml
+- type: Packages
+  url: packages/cato-networks-packages.yml
+- type: SDKs
+  url: packages/cato-networks-packages.yml
+- type: CLI
+  url: cli/cato-networks-cli.yml
+- type: MCPServer
+  url: mcp/cato-networks-mcp.yml
+- type: LLMsTxt
+  url: llms/cato-networks-llms.txt
+- type: WellKnown
+  url: well-known/cato-networks-well-known.yml
+- type: Conventions
+  url: conventions/cato-networks-conventions.yml
+- type: Lifecycle
+  url: lifecycle/cato-networks-lifecycle.yml
+- type: Deprecation
+  url: lifecycle/cato-networks-lifecycle.yml
+- type: Conformance
+  url: conformance/cato-networks-conformance.yml
+- type: Compliance
+  url: https://security.catonetworks.com/
+- type: TrustCenter
+  url: security/cato-networks-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/cato-networks-vulnerability-disclosure.yml
+- type: Security
+  url: https://www.catonetworks.com/responsible-disclosure/
+- type: DomainSecurity
+  url: security/cato-networks-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
