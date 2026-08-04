@@ -1,0 +1,26 @@
+generated: '2026-07-18'
+method: searched
+hosts:
+- host: https://www.catonetworks.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /llms.txt
+    status: 200
+    file: ../llms/cato-networks-llms.txt
+- host: https://api.catonetworks.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /llms.txt
+    status: 404
+notes: No RFC 9116 security.txt, OIDC discovery, RFC 8414 authorization-server, or
+  api-catalog documents are published on the website or API host. The Cato API uses
+  API-key (x-api-key) authentication rather than OAuth/OIDC. A published /llms.txt
+  exists on the marketing site (captured verbatim in llms/).

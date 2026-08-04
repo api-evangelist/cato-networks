@@ -1,0 +1,40 @@
+generated: '2026-07-18'
+method: searched
+source: https://github.com/catonetworks
+packages:
+- language: python
+  registry: pypi
+  name: catocli
+  url: https://pypi.org/project/catocli/
+  install: pip install catocli
+  official: true
+  repo: https://github.com/catonetworks/cato-cli
+  description: Python command-line interface for the Cato Networks public GraphQL API.
+- language: go
+  registry: pkg.go.dev
+  name: github.com/catonetworks/cato-go-sdk
+  url: https://pkg.go.dev/github.com/catonetworks/cato-go-sdk
+  install: go get github.com/catonetworks/cato-go-sdk
+  official: true
+  repo: https://github.com/catonetworks/cato-go-sdk
+  version: v0.3.2
+  description: Go SDK for the Cato Networks API, used to automate and manage SASE deployments.
+- language: hcl
+  registry: terraform
+  name: catonetworks/cato
+  url: https://registry.terraform.io/providers/catonetworks/cato/latest
+  install: terraform { required_providers { cato = { source = "catonetworks/cato" } } }
+  official: true
+  repo: https://github.com/catonetworks/terraform-provider-cato
+  description: Terraform provider to auto-provision sites and configurations in the
+    Cato Management Application (CMA) via API.
+- language: python
+  registry: github
+  name: cato-toolbox
+  url: https://github.com/catonetworks/cato-toolbox
+  install: git clone https://github.com/catonetworks/cato-toolbox
+  official: true
+  description: Example scripts, reference code, and helper utilities for building
+    automated flows against the Cato GraphQL API (not a published package).
+notes: All libraries are published by the official catonetworks GitHub organization
+  under the Apache-2.0 license.

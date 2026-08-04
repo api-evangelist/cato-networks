@@ -1,0 +1,23 @@
+generated: '2026-07-18'
+method: searched
+source: https://api.catonetworks.com/documentation/
+versioning:
+  scheme: uri-path
+  current: v1 (graphql2 schema)
+  endpoint: https://api.catonetworks.com/api/v1/graphql2
+  docs: https://api.catonetworks.com/documentation/
+  notes: The GraphQL API is served under /api/v1/ with the graphql2 schema. Schema
+    evolution is additive; fields are retired with GraphQL @deprecated markers rather
+    than breaking removals.
+deprecation:
+  policy: graphql-deprecated-directive
+  mechanism: Fields and enum values slated for removal are annotated with the GraphQL
+    @deprecated directive (with a reason) in the published schema; the schema is the
+    source of truth for deprecation state.
+  sunset_header: false
+status_page: https://status.catonetworks.com/
+sla:
+  url: null
+  notes: SLA/uptime commitments are governed by the customer agreement rather than a
+    public SLA page.
+deprecated_operations: []

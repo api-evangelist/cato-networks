@@ -1,0 +1,50 @@
+generated: '2026-07-18'
+method: searched
+source: https://api.catonetworks.com/documentation/
+api_style: graphql
+endpoint: https://api.catonetworks.com/api/v1/graphql2
+transport: HTTPS POST (single GraphQL endpoint)
+authentication:
+  style: api-key
+  header: x-api-key
+  ref: authentication/cato-networks-authentication.yml
+account_context:
+  argument: accountID
+  description: Most operations require an accountID argument identifying the target
+    Cato account.
+pagination:
+  styles:
+  - name: paging
+    description: List-style queries (e.g. entityLookup) accept from/limit paging
+      arguments and return total counts.
+  - name: marker
+    description: The events/audit feed (eventsFeed, auditFeed) is polled incrementally
+      using an opaque marker returned by each response; clients pass the marker back
+      to fetch subsequent batches.
+events:
+  surface: pull
+  operations:
+  - eventsFeed
+  - auditFeed
+  description: Security and networking events are consumed by polling a marker-based
+    feed (commonly wired to SIEM), not by push webhooks. No AsyncAPI document is
+    published.
+error_model:
+  style: graphql
+  description: Errors are returned in the standard GraphQL top-level errors[] array
+    (message + locations/path); HTTP 200 is returned for GraphQL-level errors, with
+    transport/auth failures surfaced as HTTP 401/403/429.
+idempotency:
+  supported: false
+  notes: Cato does not document an idempotency-key mechanism for GraphQL mutations.
+rate_limiting:
+  documented: true
+  description: The Cato API enforces request rate limits; exceeding them returns
+    rate-limit errors. Consult the documentation for current per-account limits.
+versioning:
+  ref: lifecycle/cato-networks-lifecycle.yml
+  scheme: uri-path + schema-suffix (api/v1/graphql2)
+cross_links:
+  authentication: authentication/cato-networks-authentication.yml
+  lifecycle: lifecycle/cato-networks-lifecycle.yml
+  conformance: conformance/cato-networks-conformance.yml

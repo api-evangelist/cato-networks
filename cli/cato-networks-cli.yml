@@ -1,0 +1,45 @@
+generated: '2026-07-18'
+method: searched
+source: https://github.com/catonetworks/cato-cli
+name: catocli
+description: Python command-line interface providing access to the Cato Networks public
+  GraphQL API for network management, automation, and security reporting.
+official: true
+language: python
+license: Apache-2.0
+repo: https://github.com/catonetworks/cato-cli
+package: packages/cato-networks-packages.yml
+requires: Python >= 3.6
+install:
+- pip install catocli
+- pip3 install catocli
+authentication:
+  method: api-key
+  config_command: catocli configure set
+  flags:
+  - --cato-token
+  - --account-id
+  notes: Supports multiple named profiles; account ID can be overridden per command
+    with -accountID.
+endpoint: https://api.catonetworks.com/api/v1/graphql2
+output_formats:
+- json
+- raw json
+- csv
+- custom csv
+commands:
+- name: configure
+  description: Manage authentication profiles (token + account ID), interactive or
+    non-interactive.
+- name: query
+  description: Execute GraphQL queries against the Cato API.
+- name: entityLookup
+  description: Look up account entities (sites, hosts, users, etc.).
+- name: accountMetrics
+  description: Retrieve account-level performance/usage metrics.
+- name: appStats
+  description: Retrieve application statistics / analytics.
+- name: eventsTimeSeries
+  description: Query security and networking events as time series.
+- name: socketPortMetrics
+  description: Retrieve per-socket-port metrics.
