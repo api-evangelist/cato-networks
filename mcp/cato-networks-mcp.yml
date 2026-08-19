@@ -4,15 +4,14 @@ status: published
 source: https://github.com/catonetworks/cato-mcp-server
 server:
   name: cato-mcp-server
-  description: Local Model Context Protocol (MCP) server for Cato Networks' public
-    GraphQL API (Cato Management Application / CMA).
+  description: Local Model Context Protocol (MCP) server for Cato Networks' public GraphQL API (Cato Management
+    Application / CMA).
   official: true
   language: TypeScript
   license: Apache-2.0
   transport: stdio
   image: ghcr.io/catonetworks/cato-mcp-server:latest
-  run: docker run --rm -i -e CATO_API_HOST=<host> -e CATO_ACCOUNT_ID=<id> -e CATO_API_KEY=<key>
-    ghcr.io/catonetworks/cato-mcp-server:latest
+  run: docker run --rm -i -e CATO_API_HOST=<host> -e CATO_ACCOUNT_ID=<id> -e CATO_API_KEY=<key> ghcr.io/catonetworks/cato-mcp-server:latest
   build:
   - yarn install
   - yarn build
@@ -34,6 +33,12 @@ example_tools:
 - name: site_network_health
 - name: top_site_bandwidth_consumers
 - name: user_metrics_timeseries
-notes: Published first-party MCP server distributed as a GitHub Container Registry
-  image; runs locally over stdio and authenticates to the Cato GraphQL API with an
-  API key.
+notes: Published first-party MCP server distributed as a GitHub Container Registry image; runs locally
+  over stdio and authenticates to the Cato GraphQL API with an API key.
+deployment:
+  mode: remote
+  endpoint: https://api.catonetworks.com/api/v1/graphql2
+  verified: probed
+  probe: http-422
+  checked: '2026-08-12'
+  source: catalog MCP census
