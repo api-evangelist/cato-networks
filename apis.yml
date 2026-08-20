@@ -40,6 +40,16 @@ tags:
 - SD-WAN
 - Zero Trust
 - GraphQL
+tags_raw:
+- Company
+- Cybersecurity
+- SASE
+- SSE
+- Networking
+- Security
+- SD-WAN
+- Zero Trust
+- GraphQL
 - API
 apis:
 - name: Cato GraphQL API
